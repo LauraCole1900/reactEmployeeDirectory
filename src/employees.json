@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "firstName": "William",
+    "lastName": "Hartnell",
+    "role": "Lead Researcher",
+    "department": "Research & Development",
+    "phone": "(555) 555-0001",
+    "email": "w.hartnell@tardis.com",
+    "hireDate": "1963-11-23"
+  },
+  {
+    "id": 2,
+    "firstName": "Patrick",
+    "lastName": "Troughton",
+    "role": "Sales Manager",
+    "department": "Sales",
+    "phone": "(555) 555-0002",
+    "email": "p.troughton@tardis.com",
+    "hireDate": "1966-10-29"
+  },
+  {
+    "id": 3,
+    "firstName": "Jon",
+    "lastName": "Pertwee",
+    "role": "Director of Human Resources",
+    "department": "Administration",
+    "phone": "(555) 555-0003",
+    "email": "j.pertwee@tardis.com",
+    "hireDate": "1970-01-03"
+  },
+  {
+    "id": 4,
+    "firstName": "Tom",
+    "lastName": "Baker",
+    "role": "Regional Manager",
+    "department": "Administration",
+    "phone": "(555) 555-0004",
+    "email": "t.baker@tardis.com",
+    "hireDate": "1974-06-08"
+  },
+  {
+    "id": 5,
+    "firstName": "Peter",
+    "lastName": "Davison",
+    "role": "Salesman",
+    "department": "Sales",
+    "phone": "(555) 555-0005",
+    "email": "p.davison@tardis.com",
+    "hireDate": "1981-03-21"
+  },
+  {
+    "id": 6,
+    "firstName": "Colin",
+    "lastName": "Baker",
+    "role": "Research Engineer",
+    "department": "Research & Development",
+    "phone": "(555) 555-0006",
+    "email": "c.baker@tardis.com",
+    "hireDate": "1984-03-16"
+  },
+  {
+    "id": 7,
+    "firstName": "Sylvester",
+    "lastName": "McCoy",
+    "role": "Research Engineer",
+    "department": "Research & Development",
+    "phone": "(555) 555-0007",
+    "email": "s.mccoy@tardis.com",
+    "hireDate": "1987-09-07"
+  },
+  {
+    "id": 8,
+    "firstName": "Paul",
+    "lastName": "McGann",
+    "role": "Salesman",
+    "department": "Sales",
+    "phone": "(555) 555-0008",
+    "email": "p.mcgann@tardis.com",
+    "hireDate": "1996-05-27"
+  },
+  {
+    "id": 9,
+    "firstName": "John",
+    "lastName": "Hurt",
+    "role": "CFO",
+    "department": "Administration",
+    "phone": "(555) 555-0927",
+    "email": "j.hurt@tardis.com",
+    "hireDate": "2003-07-07"
+  },
+  {
+    "id": 10,
+    "firstName": "Christopher",
+    "lastName": "Eccleston",
+    "role": "Accountant",
+    "department": "Accounting",
+    "phone": "(555) 555-0009",
+    "email": "c.eccleston@tardis.com",
+    "hireDate": "2005-03-26"
+  },
+  {
+    "id": 11,
+    "firstName": "David",
+    "lastName": "Tennant",
+    "role": "COO",
+    "department": "Administration",
+    "phone": "(555) 555-0010",
+    "email": "d.tennant@tardis.com",
+    "hireDate": "2005-06-18"
+  },
+  {
+    "id": 12,
+    "firstName": "Matt",
+    "lastName": "Smith",
+    "role": "Salesman",
+    "department": "Sales",
+    "phone": "(555) 555-0011",
+    "email": "m.smith@tardis.com",
+    "hireDate": "2010-01-01"
+  },
+  {
+    "id": 13,
+    "firstName": "Peter",
+    "lastName": "Capaldi",
+    "role": "Lead Counsel",
+    "department": "Legal",
+    "phone": "(555) 555-0012",
+    "email": "p.capaldi@tardis.com",
+    "hireDate": "2013-12-25"
+  },
+  {
+    "id": 14,
+    "firstName": "Jodie",
+    "lastName": "Whittaker",
+    "role": "CEO",
+    "department": "Administration",
+    "phone": "(555) 555-0013",
+    "email": "j.whittaker@tardis.com",
+    "hireDate": "2017-12-25"
+  }
+]
