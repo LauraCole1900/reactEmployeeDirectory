@@ -4,9 +4,9 @@ import Dropdown from "react-bootstrap/Dropdown";
 import employees from "../../employees.json";
 import "./style.css";
 
-function CreateForm() {
+function CreateForm(props) {
   // Iterate over props/employees object and pull department values into array
-  const employeeObj = {data: employees};
+  const employeeObj = { data: employees };
   console.log(employeeObj);
   const deptNames = employeeObj.map;
   console.log(deptNames);
@@ -21,10 +21,17 @@ function CreateForm() {
 
   return (
     <>
-      <DropdownButton id="dropdown-item-button" title="Select filter criteria">
-        <Dropdown.Item as="button">Department</Dropdown.Item><br />
-        <Dropdown.Item as="button">Role</Dropdown.Item>
-      </DropdownButton>
+      <div className="row">
+        <div className="col-3">
+          <DropdownButton id="dropdown-item-button" title="Select filter criteria">
+            <Dropdown.Item as="button">Department</Dropdown.Item><br />
+            <Dropdown.Item as="button">Role</Dropdown.Item>
+          </DropdownButton>
+        </div>
+        <div className="col-6">
+          <input className="" placeholder="Search" type="text" name="search" value={props.search} onChange={props.handleInputChange} />
+        </div>
+      </div>
     </>
   )
 

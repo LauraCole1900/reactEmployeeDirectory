@@ -9,6 +9,7 @@ class App extends Component {
 
   state = {
     employeesArr: employees,
+    search: ""
     // sortBy: id
   }
 
@@ -16,6 +17,10 @@ class App extends Component {
     // onClick of column header
     // this.setState rerenders data, sorted by that column
     // if already sorted by that column, reverses sort order
+  }
+
+  handleInputChange() {
+    
   }
 
   render() {
