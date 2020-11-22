@@ -40,6 +40,10 @@ td {
   margin: 0 50px;
 }
 
+.formRow {
+  margin: 10px
+}
+
 .tableHeader {
   text-align: center;
   font-family: 'Noto Sans JP', sans-serif;

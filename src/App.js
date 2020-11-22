@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TableData from "./components/Table";
+import CreateForm from "./components/Form";
 import employees from "./employees.json";
 import tardis from "./assets/tardis-clipart.png"
 import './App.css';
@@ -8,7 +9,13 @@ class App extends Component {
 
   state = {
     employeesArr: employees,
-    sortAscending: true
+    // sortBy: id
+  }
+
+  sortBy() {
+    // onClick of column header
+    // this.setState rerenders data, sorted by that column
+    // if already sorted by that column, reverses sort order
   }
 
   render() {
@@ -19,6 +26,9 @@ class App extends Component {
           Employee Directory
           <img src={tardis} alt="TARDIS" className="titleImage" /></h1>
           {/* TARDIS image from https://webstockreview.net/explore/tardis-clipart-transparent-background/ */}
+        </div>
+        <div className="row formRow">
+          <CreateForm />
         </div>
         <table>
           <thead>
