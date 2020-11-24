@@ -4,15 +4,17 @@ import "./style.css"
 function TableData(props) {
   return (
     <tbody>
+    {props.employeesArr.map(employee => (
       <tr>
-        <td>{props.id}</td>
-        <td>{props.lastName}, {props.firstName}</td>
-        <td>{props.role}</td>
-        <td>{props.department}</td>
-        <td>{props.phone}</td>
-        <td>{props.email}</td>
-        <td>{props.hireDate}</td>
+        <td>{employee.id}</td>
+        <td>{employee.lastName}, {employee.firstName}</td>
+        <td>{employee.role}</td>
+        <td>{employee.department}</td>
+        <td>{employee.phone}</td>
+        <td>{employee.email}</td>
+        <td>{employee.hireDate}</td>
       </tr>
+    ))}
     </tbody>
   )
 }

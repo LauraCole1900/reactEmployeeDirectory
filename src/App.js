@@ -9,18 +9,61 @@ class App extends Component {
 
   state = {
     employeesArr: employees,
-    search: ""
-    // sortBy: id
+    search: "",
+    sortAscending: true
   }
 
-  sortBy() {
-    // onClick of column header
-    // this.setState rerenders data, sorted by that column
-    // if already sorted by that column, reverses sort order
+  filterResults = () => {
+    const sortString = this.state.search;
+    const employeesArr2 = this.state.employeesArr.slice(0);
+    console.log(employeesArr2);
+    const sortedEmployees = employeesArr2.filter(names => sortString === "" || names.includes(sortString) )
+    console.log(sortedEmployees);
+    // get state.search
+    // filter employee array where last name starts with current state.search
   }
 
-  handleInputChange() {
-    
+  sortById = () => {
+    const sorted = this.state.employeesArr.sort((a, b) => (a.id > b.id) ? 1 : -1);
+    this.setState({ ...this.state, employeesArr: sorted })
+  };
+
+  sortByName = () => {
+    const sorted = this.state.employeesArr.sort((a, b) => a.lastName > b.lastName ? 1 : -1);
+    this.setState({ ...this.state, employeesArr: sorted })
+  }
+
+  sortByRole = () => {
+    const sorted = this.state.employeesArr.sort((a, b) => a.role > b.role ? 1 : -1);
+    this.setState({ ...this.state, employeesArr: sorted })
+  }
+
+  sortByDepartment = () => {
+    const sorted = this.state.employeesArr.sort((a, b) => a.department > b.department ? 1 : -1);
+    this.setState({ ...this.state, employeesArr: sorted })
+  }
+
+  sortByPhone = () => {
+    const sorted = this.state.employeesArr.sort((a, b) => a.phone > b.phone ? 1 : -1);
+    this.setState({ ...this.state, employeesArr: sorted })
+  }
+
+  sortByEmail = () => {
+    const sorted = this.state.employeesArr.sort((a, b) => a.email > b.email ? 1 : -1);
+    this.setState({ ...this.state, employeesArr: sorted })
+  }
+
+  sortByHireDate = () => {
+    const sorted = this.state.employeesArr.sort((a, b) => a.hireDate > b.hireDate ? 1 : -1);
+    this.setState({ ...this.state, employeesArr: sorted })
+  }
+
+  handleInputChange = e => {
+    const { name, value } = e.target;
+    // Look up logic & syntax for this
+    this.setState({ [name]: value })
+    // call filterResults
+    this.filterResults()
   }
 
   render() {
@@ -33,38 +76,35 @@ class App extends Component {
           {/* TARDIS image from https://webstockreview.net/explore/tardis-clipart-transparent-background/ */}
         </div>
         <div className="row formRow">
-          <CreateForm />
+          <CreateForm search={this.state.search} handleInputChange={this.handleInputChange} />
         </div>
         <table>
           <thead>
             <tr>
               <th className="tableHeader">
-                <span onClick={() => this.state.sort(this.state.id)}>ID</span>
+                <span onClick={this.sortById}>ID</span>
               </th>
               <th className="tableHeader">
-                <span onClick={() => this.state.sort(this.state.lastName)}>Name</span>
+                <span onClick={this.sortByName}>Name</span>
               </th>
               <th className="tableHeader">
-                <span onClick={() => this.state.sort(this.state.role)}>Role</span>
+                <span onClick={this.sortByRole}>Role</span>
               </th>
               <th className="tableHeader">
-                <span onClick={() => this.state.sort(this.state.department)}>Department</span>
+                <span onClick={this.sortByDepartment}>Department</span>
               </th>
               <th className="tableHeader">
-                <span onClick={() => this.state.sort(this.state.phone)}>Phone</span>
+                <span onClick={this.sortByPhone}>Phone</span>
               </th>
               <th className="tableHeader">
-                <span onClick={() => this.state.sort(this.state.email)}>Email</span>
+                <span onClick={this.sortByEmail}>Email</span>
               </th>
               <th className="tableHeader">
-                <span onClick={() => this.state.sort(this.state.hireDate)}>Date of Hire</span>
+                <span onClick={this.sortByHireDate}>Date of Hire</span>
               </th>
             </tr>
           </thead>
-          {this.state.employeesArr.map(employee => (
-            <TableData key={employee.id} {...employee}
-              sortTable={this.sortTable} />
-          ))}
+            <TableData key={this.state.employeesArr.id} employeesArr={this.state.employeesArr} />
         </table>
 
       </div>
