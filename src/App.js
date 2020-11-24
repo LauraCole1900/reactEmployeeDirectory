@@ -22,7 +22,7 @@ class App extends Component {
         return employeeObj.lastName.indexOf(sortString) > -1
       })
       console.log(sortedEmployees);
-      this.setState({...this.state, lastName: sortedEmployees.lastName})
+      this.setState({...this.state, employeesArr: sortedEmployees})
     }
     // get state.search
     // filter employee array where last name starts with current state.search
