@@ -16,46 +16,59 @@ class App extends Component {
   filterResults = () => {
     const sortString = this.state.search;
     const employeesArr2 = this.state.employeesArr.slice(0);
-    console.log(employeesArr2);
-    const sortedEmployees = employeesArr2.filter(names => sortString === "" || names.includes(sortString) )
-    console.log(sortedEmployees);
+    if(sortString.length > 2){
+      const sortedEmployees = employeesArr2.filter(employeeObj => {
+        console.log(employeeObj.lastName.indexOf(sortString))
+        return employeeObj.lastName.indexOf(sortString) > -1
+      })
+      console.log(sortedEmployees);
+      this.setState({...this.state, lastName: sortedEmployees.lastName})
+    }
     // get state.search
     // filter employee array where last name starts with current state.search
   }
 
+  ascendingSort = (arr, prop) => {
+    return arr.sort((a, b) => (a[prop] > b[prop]) ? 1 : -1);
+  }
+
+  descendingSort = (arr, prop) => {
+    return arr.sort((a, b) => (b[prop] > a[prop]) ? 1 : -1);
+  }
+
   sortById = () => {
-    const sorted = this.state.employeesArr.sort((a, b) => (a.id > b.id) ? 1 : -1);
-    this.setState({ ...this.state, employeesArr: sorted })
+    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "id") : this.descendingSort(this.state.employeesArr, "id")
+    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   };
 
   sortByName = () => {
-    const sorted = this.state.employeesArr.sort((a, b) => a.lastName > b.lastName ? 1 : -1);
-    this.setState({ ...this.state, employeesArr: sorted })
+    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "lastName") : this.descendingSort(this.state.employeesArr, "lastName")
+    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   }
 
   sortByRole = () => {
-    const sorted = this.state.employeesArr.sort((a, b) => a.role > b.role ? 1 : -1);
-    this.setState({ ...this.state, employeesArr: sorted })
+    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "role") : this.descendingSort(this.state.employeesArr, "role")
+    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   }
 
   sortByDepartment = () => {
-    const sorted = this.state.employeesArr.sort((a, b) => a.department > b.department ? 1 : -1);
-    this.setState({ ...this.state, employeesArr: sorted })
+    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "department") : this.descendingSort(this.state.employeesArr, "department")
+    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   }
 
   sortByPhone = () => {
-    const sorted = this.state.employeesArr.sort((a, b) => a.phone > b.phone ? 1 : -1);
-    this.setState({ ...this.state, employeesArr: sorted })
+    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "phone") : this.descendingSort(this.state.employeesArr, "phone")
+    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   }
 
   sortByEmail = () => {
-    const sorted = this.state.employeesArr.sort((a, b) => a.email > b.email ? 1 : -1);
-    this.setState({ ...this.state, employeesArr: sorted })
+    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "email") : this.descendingSort(this.state.employeesArr, "email")
+    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   }
 
   sortByHireDate = () => {
-    const sorted = this.state.employeesArr.sort((a, b) => a.hireDate > b.hireDate ? 1 : -1);
-    this.setState({ ...this.state, employeesArr: sorted })
+    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "hireDate") : this.descendingSort(this.state.employeesArr, "hireDate")
+    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   }
 
   handleInputChange = e => {
@@ -104,7 +117,7 @@ class App extends Component {
               </th>
             </tr>
           </thead>
-            <TableData key={this.state.employeesArr.id} employeesArr={this.state.employeesArr} />
+            <TableData employeesArr={this.state.employeesArr} />
         </table>
 
       </div>

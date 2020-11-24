@@ -5,7 +5,7 @@ function TableData(props) {
   return (
     <tbody>
     {props.employeesArr.map(employee => (
-      <tr>
+      <tr key={employee.id}>
         <td>{employee.id}</td>
         <td>{employee.lastName}, {employee.firstName}</td>
         <td>{employee.role}</td>
