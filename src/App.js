@@ -13,29 +13,39 @@ class App extends Component {
     sortAscending: true
   }
 
+  // Data input from input form
+  handleInputChange = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value })
+    this.filterResults()
+  }
+
+  // Filter method from data in input field
   filterResults = () => {
     const sortString = this.state.search;
     const employeesArr2 = this.state.employeesArr.slice(0);
-    if(sortString.length > 2){
+    if (sortString.length > 2) {
       const sortedEmployees = employeesArr2.filter(employeeObj => {
         console.log(employeeObj.lastName.indexOf(sortString))
         return employeeObj.lastName.indexOf(sortString) > -1
       })
       console.log(sortedEmployees);
+      // render sortedEmployees
       this.setState({...this.state, employeesArr: sortedEmployees})
     }
-    // get state.search
-    // filter employee array where last name starts with current state.search
   }
 
+  // Sort ascending
   ascendingSort = (arr, prop) => {
     return arr.sort((a, b) => (a[prop] > b[prop]) ? 1 : -1);
   }
 
+  // Sort descending
   descendingSort = (arr, prop) => {
     return arr.sort((a, b) => (b[prop] > a[prop]) ? 1 : -1);
   }
 
+  // Sort by object properties
   sortById = () => {
     const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "id") : this.descendingSort(this.state.employeesArr, "id")
     this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
@@ -71,14 +81,7 @@ class App extends Component {
     this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   }
 
-  handleInputChange = e => {
-    const { name, value } = e.target;
-    // Look up logic & syntax for this
-    this.setState({ [name]: value })
-    // call filterResults
-    this.filterResults()
-  }
-
+  // Render to page
   render() {
     return (
       <div className="container">
@@ -88,9 +91,11 @@ class App extends Component {
           <img src={tardis} alt="TARDIS" className="titleImage" /></h1>
           {/* TARDIS image from https://webstockreview.net/explore/tardis-clipart-transparent-background/ */}
         </div>
+        {/* Input form */}
         <div className="row formRow">
           <CreateForm search={this.state.search} handleInputChange={this.handleInputChange} />
         </div>
+        {/* Table headers */}
         <table>
           <thead>
             <tr>
@@ -117,7 +122,8 @@ class App extends Component {
               </th>
             </tr>
           </thead>
-            <TableData employeesArr={this.state.employeesArr} />
+          {/* Table data */}
+          <TableData employeesArr={this.state.employeesArr} />
         </table>
 
       </div>
