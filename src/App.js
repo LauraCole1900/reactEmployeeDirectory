@@ -16,14 +16,17 @@ class App extends Component {
   // Data input from input form
   handleInputChange = e => {
     const { name, value } = e.target;
-    this.setState({ [name]: value })
-    this.filterResults()
+    this.setState({ [name]: value }, function(){
+      this.filterResults()
+    })
+
   }
 
   // Filter method from data in input field
   filterResults = () => {
     const sortString = this.state.search;
     const employeesArr2 = this.state.employeesArr.slice(0);
+    console.log(this.state.search)
     if (sortString.length > 2) {
       const sortedEmployees = employeesArr2.filter(employeeObj => {
         console.log(employeeObj.lastName.indexOf(sortString))
