@@ -35,7 +35,27 @@ Searching by last name:
 
 ## Installation Instructions
 
-npm i
+If you want to run a copy of this app on your local machine, first clone the repository:
+
+HTTPS:
+```
+$ git clone https://github.com/LauraCole1900/reactEmployeeDirectory.git
+```
+
+SSH:
+```
+$ git clone git@github.com:LauraCole1900/reactEmployeeDirectory.git
+```
+
+Then cd/ into the cloned directory and download the dependencies by typing into the command line
+```
+$ npm install --save
+```
+
+Once the dependencies are installed, start the application by typing into the command line
+```
+$ npm start
+```
 
 ## Usage
 
@@ -55,7 +75,7 @@ N/A
 
 ## Contributing
 
-N/A
+We believe code is never finished, welcome your contributions to enhance the applications functionality. Please adhere to the Code of Conduct for the Contributor Covenant, version 2.0, at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
 
 ## Questions
 
