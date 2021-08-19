@@ -49,38 +49,8 @@ class App extends Component {
   }
 
   // Sort by object properties
-  sortById = () => {
-    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "id") : this.descendingSort(this.state.employeesArr, "id")
-    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
-  };
-
-  sortByName = () => {
-    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "lastName") : this.descendingSort(this.state.employeesArr, "lastName")
-    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
-  }
-
-  sortByRole = () => {
-    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "role") : this.descendingSort(this.state.employeesArr, "role")
-    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
-  }
-
-  sortByDepartment = () => {
-    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "department") : this.descendingSort(this.state.employeesArr, "department")
-    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
-  }
-
-  sortByPhone = () => {
-    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "phone") : this.descendingSort(this.state.employeesArr, "phone")
-    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
-  }
-
-  sortByEmail = () => {
-    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "email") : this.descendingSort(this.state.employeesArr, "email")
-    this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
-  }
-
-  sortByHireDate = () => {
-    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, "hireDate") : this.descendingSort(this.state.employeesArr, "hireDate")
+  sortBy = (prop) => {
+    const sorted = (this.state.sortAscending) ? this.ascendingSort(this.state.employeesArr, prop) : this.descendingSort(this.state.employeesArr, prop)
     this.setState({ ...this.state, sortAscending: !this.state.sortAscending, employeesArr: sorted })
   }
 
@@ -103,25 +73,25 @@ class App extends Component {
           <thead>
             <tr>
               <th className="tableHeader">
-                <span onClick={this.sortById}>ID</span>
+                <span onClick={() => this.sortBy("id")}>ID</span>
               </th>
               <th className="tableHeader">
-                <span onClick={this.sortByName}>Name</span>
+                <span onClick={() => this.sortBy("lastName")}>Name</span>
               </th>
               <th className="tableHeader">
-                <span onClick={this.sortByRole}>Role</span>
+                <span onClick={() => this.sortBy("role")}>Role</span>
               </th>
               <th className="tableHeader">
-                <span onClick={this.sortByDepartment}>Department</span>
+                <span onClick={() => this.sortBy("department")}>Department</span>
               </th>
               <th className="tableHeader">
-                <span onClick={this.sortByPhone}>Phone</span>
+                <span onClick={() => this.sortBy("phone")}>Phone</span>
               </th>
               <th className="tableHeader">
-                <span onClick={this.sortByEmail}>Email</span>
+                <span onClick={() => this.sortBy("email")}>Email</span>
               </th>
               <th className="tableHeader">
-                <span onClick={this.sortByHireDate}>Date of Hire</span>
+                <span onClick={() => this.sortBy("hireDate")}>Date of Hire</span>
               </th>
             </tr>
           </thead>
