@@ -1,12 +1,19 @@
+:root {
+  --headerFont: 'Noto Sans JP', sans-serif;
+  --darkGray: #a9a9a9;
+  --ltYellow: #ffffe0;
+  --darkBlue: #00008b;
+}
+
 body {
-  background-color: darkblue;
+  background-color: var(--darkBlue);
 }
 
 h1 {
   margin: 20px;
-  color: darkblue;
+  color: var(--darkBlue);
   text-align: center;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: var(--headerFont);
 }
 
 table {
@@ -19,17 +26,17 @@ th {
   font-weight: bold;
   text-decoration: underline;
   padding: 5px 10px;
-  outline: 1px solid darkgray;
+  outline: 1px solid var(--darkGray);
 }
 
 td {
   padding: 5px 10px;
-  outline: 1px solid darkgray;
+  outline: 1px solid var(--darkGray);
   min-width: 50px;
 }
 
 .container {
-  background-color: lightyellow;
+  background-color: var(--ltYellow);
   border-radius: 15px;
   margin-top: 50px;
   padding-bottom: 15px;
@@ -46,5 +53,5 @@ td {
 
 .tableHeader {
   text-align: center;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: var(--headerFont);
 }
