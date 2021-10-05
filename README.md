@@ -63,7 +63,7 @@ This project is intended to be used to find employees in a directory.
 
 ## Technologies Used
 
-Node.js, React
+[![Node.js](https://img.shields.io/badge/built%20with-Node.js-3c873a)](https://nodejs.org/en/) [![React](https://img.shields.io/badge/built%20with-React-61dbfb)](https://reactjs.org/)
 
 ## Tests
 
